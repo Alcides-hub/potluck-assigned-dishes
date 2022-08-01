@@ -20,20 +20,23 @@ addGuestButton.addEventListener("click", function () {
   // console.log(guest);
   if (guest !== "") {
     addToList(guest);
-    clearUp();
     updateGuestCount();
+    clearUp();
+    
   }
 });
-
-const clearUp = function () {
-  guestInput.value = "";
-};
 
 const addToList = function (guest) {
   const listItem = document.createElement("li");
   listItem.innerText = guest;
   guestList.append(listItem);
 };
+
+
+const clearUp = function () {
+  guestInput.value = "";
+};
+
 
 const updateGuestCount = function () {
   const guests = guestList.querySelectorAll(".guest-list li");
@@ -61,7 +64,7 @@ const assignItems = function () {
     "Grilled Zucchini Salad",
     "Avocado Tomato Salad"
   ];
-  const allGuests = document.querySelectorAll(".guest-list li"); //made a mistake at list item 
+  const allGuests = document.querySelectorAll(".guest-list li");
   for (let guest of allGuests) {
     let randomPotluckIndex = Math.floor(Math.random() * potluckItems.length);
     let randomPotluckItem = potluckItems[randomPotluckIndex]; //didnt get this part.
